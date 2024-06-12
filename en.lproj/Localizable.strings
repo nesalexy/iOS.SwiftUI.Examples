@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  SwiftUIExample
+
+  Created by Alexy Nesterchuk on 15.05.2024.
+  
+*/
+
+"description" = "The Monaco Editor is the code editor that powers VS Code. A good page describing the code editor's features is here. It is licensed under the MIT License and supports Edge, Chrome, Firefox, Safari and Opera. The Monaco editor is not supported in mobile browsers or mobile web frameworks. Find more information at the Monaco Editor repo. \n The Monaco Editor is the code editor that powers VS Code. A good page describing the code editor's features is here. It is licensed under the MIT License and supports Edge, Chrome, Firefox, Safari and Opera. The Monaco editor is not supported in mobile browsers or mobile web frameworks. Find more information at the Monaco Editor repo.";
