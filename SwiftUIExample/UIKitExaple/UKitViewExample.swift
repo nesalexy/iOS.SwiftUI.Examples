@@ -7,9 +7,13 @@
 
 import SwiftUI
 
+/// Example callback from UIKit View
 struct UKitViewExample: View {
     var body: some View {
-        WebView()
+        WebView(url: URL(string: "https://nesterchuk-oleksii.com")!)
+            .set(navigationPolicy: { navigationAction in
+                navigationAction.navigationType == .linkActivated ? .cancel : .allow
+            })
     }
 }
 

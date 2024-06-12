@@ -9,11 +9,9 @@ import Foundation
 
 
 class Analytics {
-    
     func send(tag: String) {
         print("Send \(tag) analytic")
     }
-    
 }
 
 class MockAnalytics: Analytics {

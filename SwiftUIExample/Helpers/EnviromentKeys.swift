@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-// doen't work for ObservableObject object
+// Example EnvironmentKey for own services
+// doesn't work for ObservableObject object
 private struct AnalyticsEnvironmentKey: EnvironmentKey {
     static let defaultValue: Analytics = Analytics()
 }
