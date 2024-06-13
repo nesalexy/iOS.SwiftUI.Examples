@@ -27,19 +27,23 @@ struct AppTabView: View {
                 }
                 .tag(Tab.todos)
             
-            SheetExampleView()
-                .tabItem {
-                    Image(systemName: "questionmark.circle.fill")
-                    Text("About")
-                }
-                .tag(Tab.about)
-                // MARK: - Example override global instance of service
-                .environment(\.analytics, MockAnalytics())
+            VStack {
+                PassDataThrowsEnvironmentExampleParentView()
+                    .frame(height: 200)
+                SheetExampleView()
+            }
+            .tabItem {
+                Image(systemName: "questionmark.circle.fill")
+                Text("About")
+            }
+            .tag(Tab.about)
+            // MARK: - Example override global instance of service
+            .environment(\.analytics, MockAnalytics())
             
             PassDataThrowsEnvironmentExampleParentView()
                 .tabItem {
                     Image(systemName: "highlighter")
-                    Text("Simple UpdData ")
+                    Text("Animations")
                 }
             
             CalculateWidthBasedOnLargestView()
