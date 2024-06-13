@@ -324,7 +324,7 @@ struct SwiftUIinUIKitExampleRepresentable: UIViewControllerRepresentable {
 ```
 
 ### Example 8
-Example of displaying SwiftUI element **inside UIKit TableView**
+Example of displaying SwiftUI element inside UIKit TableView
 ```
 extension SwiftUIinUIKitExample: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -346,4 +346,59 @@ extension SwiftUIinUIKitExample: UITableViewDataSource {
         return cell
     }
 }
+```
+
+### Example 9
+Aniamtions
+1. Explicitly animation
+```
+@State var buttonTapped: Bool = false
+    
+    var body: some View {
+        Button("Click") {
+            /// example of explicitly animation
+            withAnimation {
+                buttonTapped.toggle()
+            }        }
+        .padding()
+        .background(.blue)
+        .foregroundStyle(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .scaleEffect(buttonTapped ? 0.8 : 1)
+    }
+```
+2. Implicitly animation
+```
+@State var buttonTapped: Bool = false
+    
+    var body: some View {
+        Button("Click") {
+            buttonTapped.toggle()
+        }
+        .padding()
+        .background(.blue)
+        .foregroundStyle(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .scaleEffect(buttonTapped ? 0.8 : 1)
+        /// example of implicitly animation, must be at the bottom
+        .animation(.default, value: buttonTapped)
+    }
+```
+3. Multiple animations in one view
+```
+var body: some View {
+        Button("Click") {
+            buttonTapped.toggle()
+        }
+        .padding()
+        .background(.blue)
+        .foregroundStyle(buttonTapped ? .green : .white)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        /// foregroundStyle will be with animation bellow
+        .animation(.default, value: buttonTapped)
+        /// .animation(nil, value: buttonTapped) - for remove all animations before
+        .scaleEffect(buttonTapped ? 0.8 : 1)
+        /// scaleEffect will be with animation bellow
+        .animation(.easeInOut(duration: 1.0), value: buttonTapped)
+    }
 ```
