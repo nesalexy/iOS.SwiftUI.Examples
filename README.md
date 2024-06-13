@@ -402,3 +402,30 @@ var body: some View {
         .animation(.easeInOut(duration: 1.0), value: buttonTapped)
     }
 ```
+### Example 10
+**Transition** - appearing view with animation.
+
+```
+@State var showContent = false
+    
+    var body: some View {
+        VStack {
+            Button("Click") {
+                withAnimation {
+                    showContent.toggle()
+                }
+                
+            }        }
+
+        if showContent {
+            VStack {
+                Text("Content here")
+                Text("Content here")
+                Text("Content here")
+            }
+            //.transition(.slide.combined(with: .opacity)) /// works with withAnimation
+            .transition(.asymmetric(insertion: .opacity,
+                                    removal: .slide.combined(with: .opacity)))
+        }
+    }
+```

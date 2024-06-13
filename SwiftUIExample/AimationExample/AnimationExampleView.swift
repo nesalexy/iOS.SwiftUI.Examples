@@ -7,28 +7,44 @@
 
 import SwiftUI
 
+struct ScalingButtonStyle: ButtonStyle {
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(.blue)
+            .foregroundStyle(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .scaleEffect(configuration.isPressed ? 0.8 : 1)
+            .animation(.easeInOut(duration: 0.1), value: configuration.isPressed)
+    }
+}
+
+
+
 struct AnimationExampleView: View {
     
-    @State var buttonTapped: Bool = false
+    @State var showContent = false
     
     var body: some View {
-        Button("Click") {
-            /// example of explicitly animation
-//            withAnimation {
-//                buttonTapped.toggle()
-//            }
-            
-            buttonTapped.toggle()
+        VStack {
+            Button("Click") {
+                withAnimation {
+                    showContent.toggle()
+                }
+                
+            }        }
+
+        if showContent {
+            VStack {
+                Text("Content here")
+                Text("Content here")
+                Text("Content here")
+            }
+            //.transition(.slide.combined(with: .opacity)) /// works with withAnimation
+            .transition(.asymmetric(insertion: .opacity,
+                                    removal: .slide.combined(with: .opacity)))
         }
-        .padding()
-        .background(.blue)
-        .foregroundStyle(buttonTapped ? .green : .white)
-        .clipShape(RoundedRectangle(cornerRadius: 8))
-        /// implicitly animation. foregroundStyle will be with animation bellow
-        .animation(.default, value: buttonTapped)
-        .scaleEffect(buttonTapped ? 0.8 : 1)
-        /// implicitly animation. scaleEffect will be with animation bellow
-        .animation(.easeInOut(duration: 1.0), value: buttonTapped)
     }
 }
 
