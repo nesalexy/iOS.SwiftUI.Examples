@@ -324,7 +324,7 @@ struct SwiftUIinUIKitExampleRepresentable: UIViewControllerRepresentable {
 ```
 
 ### Example 8
-Example of displaying SwiftUI element inside UIKit TableView
+Example of displaying SwiftUI element **inside UIKit TableView**
 ```
 extension SwiftUIinUIKitExample: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
