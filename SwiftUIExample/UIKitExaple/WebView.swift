@@ -51,6 +51,7 @@ struct WebView: UIViewRepresentable {
 }
 
 extension WebView {
+    /// example callback closure 
     func set(navigationPolicy: @escaping (WKNavigationAction) -> WKNavigationActionPolicy) -> WebView {
         var copy = self
         copy.navigationPolicy = navigationPolicy

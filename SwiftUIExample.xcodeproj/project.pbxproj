@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7898CCF82C1B0B1A003269FC /* SwiftUIinUIKitExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898CCF72C1B0B1A003269FC /* SwiftUIinUIKitExample.swift */; };
+		7898CCFB2C1B0B7A003269FC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7898CCFA2C1B0B7A003269FC /* SnapKit */; };
+		7898CCFD2C1B0B7A003269FC /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7898CCFC2C1B0B7A003269FC /* SnapKit-Dynamic */; };
 		78A788A52C00866A00B0FF31 /* PassDataThrowsEnvironmentExampleParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A788A42C00866A00B0FF31 /* PassDataThrowsEnvironmentExampleParentView.swift */; };
 		78A788A72C00869D00B0FF31 /* PassDataThrowsEnvironmentExampleChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A788A62C00869D00B0FF31 /* PassDataThrowsEnvironmentExampleChildView.swift */; };
 		78A788A92C0086BE00B0FF31 /* TextFieldInputPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A788A82C0086BE00B0FF31 /* TextFieldInputPreferenceKey.swift */; };
@@ -36,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7898CCF72C1B0B1A003269FC /* SwiftUIinUIKitExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIinUIKitExample.swift; sourceTree = "<group>"; };
 		78A788A42C00866A00B0FF31 /* PassDataThrowsEnvironmentExampleParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDataThrowsEnvironmentExampleParentView.swift; sourceTree = "<group>"; };
 		78A788A62C00869D00B0FF31 /* PassDataThrowsEnvironmentExampleChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDataThrowsEnvironmentExampleChildView.swift; sourceTree = "<group>"; };
 		78A788A82C0086BE00B0FF31 /* TextFieldInputPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldInputPreferenceKey.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7898CCFB2C1B0B7A003269FC /* SnapKit in Frameworks */,
+				7898CCFD2C1B0B7A003269FC /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +114,7 @@
 			children = (
 				78A788B02C009BC200B0FF31 /* WebView.swift */,
 				78A788B22C00EA4900B0FF31 /* UKitViewExample.swift */,
+				7898CCF72C1B0B1A003269FC /* SwiftUIinUIKitExample.swift */,
 			);
 			path = UIKitExaple;
 			sourceTree = "<group>";
@@ -229,6 +236,10 @@
 			dependencies = (
 			);
 			name = SwiftUIExample;
+			packageProductDependencies = (
+				7898CCFA2C1B0B7A003269FC /* SnapKit */,
+				7898CCFC2C1B0B7A003269FC /* SnapKit-Dynamic */,
+			);
 			productName = SwiftUIExample;
 			productReference = 78E4C3742BF48D7B00DFE7FC /* SwiftUIExample.app */;
 			productType = "com.apple.product-type.application";
@@ -257,6 +268,9 @@
 				Base,
 			);
 			mainGroup = 78E4C36B2BF48D7B00DFE7FC;
+			packageReferences = (
+				7898CCF92C1B0B7A003269FC /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 78E4C3752BF48D7B00DFE7FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7898CCF82C1B0B1A003269FC /* SwiftUIinUIKitExample.swift in Sources */,
 				78E4C39B2BF6531C00DFE7FC /* ListExampleItemDetailView.swift in Sources */,
 				78E4C3952BF5EAE600DFE7FC /* ListExampleViewModel.swift in Sources */,
 				78A788A72C00869D00B0FF31 /* PassDataThrowsEnvironmentExampleChildView.swift in Sources */,
@@ -523,6 +538,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7898CCF92C1B0B7A003269FC /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7898CCFA2C1B0B7A003269FC /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7898CCF92C1B0B7A003269FC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7898CCFC2C1B0B7A003269FC /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7898CCF92C1B0B7A003269FC /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78E4C36C2BF48D7B00DFE7FC /* Project object */;
 }
